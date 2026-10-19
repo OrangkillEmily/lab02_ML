@@ -1,0 +1,34 @@
+paths:
+  processed_data: "data/processed"
+  models_dir: "models"
+  log_file: "docs/experiment_logs.csv"
+
+hyperparameters:
+  # 1. Linear Regression
+  # (Sử dụng Normal Equation, không cần tuning)
+  linear_regression:
+    learning_rate: 0.01
+    n_iterations: 1000
+
+  # 2. Decision Tree Regression
+  # Áp dụng chốt chặn Overfitting: max_depth=15, min_samples_split=40 (tương đương min_leaf=20)
+  decision_tree:
+    max_depth: 15
+    min_samples_split: 40
+
+  # 3. Random Forest Regression
+  # Sử dụng sức mạnh đám đông (100 cây) để triệt tiêu phương sai, giữ R2 thực tế ở mức cao.
+  random_forest:
+    n_trees: 100
+    max_depth: 15
+    min_samples_split: 40
+
+  # 4. XGBoost Regression
+  # Chiến lược ổn định tuyệt đối: Cây nông (depth=5), học từng bước nhỏ (lr=0.05).
+  xgboost:
+    n_estimators: 100
+    learning_rate: 0.05
+    max_depth: 3
+    min_samples_split: 30
+    subsample: 0.6
+    max_features: 'sqrt'

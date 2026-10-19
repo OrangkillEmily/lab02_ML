@@ -69,13 +69,15 @@ Mở Terminal (Git Bash trên VS Code) và gõ:
 
 Tạo môi trường ảo (Làm 1 lần): python -m venv venv
 
-Bật môi trường (Bật mỗi khi mở VS Code): source venv/Scripts/activate
+Bật môi trường (Bật mỗi khi mở VS Code): 
+(PowerShell): .\venv\Scripts\activate
+(git bash): source venv/Scripts/activate
 
 (Dấu hiệu thành công: Đầu dòng lệnh hiện chữ (venv)).
 
 # Bước 4.2. Cài đặt kho thư viện
 
-Gõ lệnh sau để tải các thư viện theo đúng luật (không có scikit-learn):
+Gõ lệnh sau để tải các thư viện theo đúng luật:
 pip install -r requirements.txt
 
 # Bước 4.3. Xác nhận Dữ liệu thô (Raw Data)
